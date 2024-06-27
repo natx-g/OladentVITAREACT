@@ -10,10 +10,10 @@ const Login = () => {
 
     const[registrando, setRegistrando] = useState (false)
 
-    const functAutenticacion = async (e) =>{
+    const functAutenticacion = async(e) =>{
         e.preventDefault();
-        const correo = e.target.email.value;
-        const constraseña = e.target.password.value;
+        const correo = e.target.roma.value;
+        const constraseña = e.target.contra.value;
        
         if (registrando){
             try{
@@ -39,11 +39,11 @@ const Login = () => {
                     <div className='card card-body shadow-lg' >
                         <img src={ImagenProfile} alt="" className='estilo-profile'/>
                         <form onSubmit={functAutenticacion}>
-                            <input type="text" placeholder='Ingresar Email'className='cajatexto'id="email"/>
-                            <input type="password" placeholder='Ingresar Constraseña'className='cajatexto' id='password' />
+                            <input type="text" placeholder='Ingresar Email'className='cajatexto'id='roma'/>
+                            <input type="password" placeholder='Ingresar Constraseña'className='cajatexto' id='contra' />
                             <button className='btnform'>{registrando ? "Registrate" : "Inicia Sesion"}</button>
                         </form>
-                       <h4> {registrando ? "Si ya tienes cuenta" : "No tienes cuenta"} <button className='btnswicth' onClick={() => setRegistrando(!registrando)}>{registrando ? "Inicia Sesion" : "Registrate"}</button></h4>
+                       <h4 className="texto"> {registrando ? "Si ya tienes cuenta" : "No tienes cuenta"} <button className='btnswicth' onClick={() => setRegistrando(!registrando)}>{registrando ? "Inicia Sesion" : "Registrate"}</button></h4>
                     </div>
 
                 </div>

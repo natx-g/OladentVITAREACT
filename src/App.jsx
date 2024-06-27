@@ -1,22 +1,25 @@
 import { useState } from 'react'
-import Login from '../src/components/Login.jsx'
-import Home from '../src/components/Home.jsx'
-import './App.css'
+
 //importando los modulos de firebase
 import appFirebase from './credenciales'
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
-
 const auth =getAuth (appFirebase)
+
+//importar nuestros componentes
+import Login from '../src/components/Login.jsx'
+import Home from '../src/components/Home.jsx'
+
+import './App.css'
 
 function App() {
   const [usuario, setUsuario] = useState(null)
-  onAuthStateChanged(auth, (usarioFirabase)=> {
-    if (usarioFirabase){
-      setUsuario (usarioFirabase)
+  onAuthStateChanged(auth, (usuarioFirebase)=> {
+    if (usuarioFirebase){
+      setUsuario (usuarioFirebase)
     }
     else
     {
-      setUsuario
+      setUsuario (null)
     }
   })
 
