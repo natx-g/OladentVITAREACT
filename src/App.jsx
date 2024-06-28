@@ -9,6 +9,7 @@ const auth =getAuth (appFirebase)
 import Login from '../src/components/Login.jsx'
 import Home from '../src/components/Home.jsx'
 
+
 import './App.css'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
   <div>
     {usuario ? <Home correoUsuario = {usuario.email} /> : <Login/>}
+  
   </div>
   )
 }
